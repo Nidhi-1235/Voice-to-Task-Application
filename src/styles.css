@@ -143,3 +143,34 @@
     color: var(--color-foreground);
   }
 }
+
+@layer utilities {
+  /* Pulsing halo around the mic button while dictation is active. */
+  @keyframes mic-pulse {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 55%, transparent);
+    }
+    100% {
+      box-shadow: 0 0 0 18px color-mix(in oklab, var(--color-primary) 0%, transparent);
+    }
+  }
+
+  .animate-mic-pulse {
+    animation: mic-pulse 1.4s ease-out infinite;
+  }
+
+  @keyframes task-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .animate-task-in {
+    animation: task-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
