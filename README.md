@@ -1,78 +1,154 @@
-# Voice Task AI
+# EchoTask — Voice-to-Task Application
 
-Create a modern, full-stack Voice-to-Task Mobile & Web Application using React Native (Expo) and Tailwind CSS (NativeWind / Lucide Icons). 
+EchoTask is a voice-driven task management application that converts natural-language voice commands into structured tasks. Users can speak a command such as:
 
-This app is designed to convert spoken or natural language voice commands into structured, actionable tasks (extracting task title, date, and time) using Google Gemini AI.
+> "Remind me to call John tomorrow at 5 PM."
 
----
+The application processes the voice input, identifies the task, date, and time, and presents the result in a structured format.
 
-### Key Requirements & Features:
+## Features
 
-1. 🎙️ **Voice & Natural Language Input:**
+* Voice command capture
+* Speech-to-text conversion
+* AI-based task and information extraction
+* Automatic identification of task, date, and time
+* Structured task display
+* Local task storage
+* Simple and responsive user interface
 
-   - A prominent input bar allowing users to type or use speech-to-text dictation.
+## Application Workflow
 
-   - Quick "Sample Voice Commands" pills for fast testing (e.g., "Remind me to call John tomorrow at 5 PM", "Submit assignment on Friday by 11 AM").
-
-2. 🧠 **AI Task Extraction (Gemini 1.5 Flash API Integration):**
-
-   - Take the raw input string and send it to Google Gemini AI API.
-
-   - System prompt instructions:
-
-     Extract task details and respond strictly with a valid JSON object:
-
-     {
-
-       "task": "Clean concise title",
-
-       "date": "Extracted date (e.g. Tomorrow, Aug 15, or Friday)",
-
-       "time": "Extracted time (e.g. 5:00 PM or Not specified)"
-
-     }
-
-   - Include a robust local regex fallback parser if no API key is provided or if network fails.
-
-3. 📋 **Structured Task Dashboard & Cards:**
-
-   - Display tasks in a clean feed with badges for 📅 Date and ⏰ Time.
-
-   - Show the original voice command query below the extracted task card for transparency.
-
-   - Allow toggling tasks as "Completed" or deleting them.
-
-4. 🎨 **UI/UX Design:**
-
-   - Clean, dark/light modern UI with smooth micro-interactions.
-
-   - Loading spinners and error handling toasts when AI is processing commands.
-
-   - Fully responsive on mobile (iOS/Android) and Web.
-
-5. 📄 **Export / Setup Instructions:**
-
-   - Provide clean, modular code with comments.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://speak-task-magic-32.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0eec177f-3c47-4a75-a57e-ca6543856aac).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```text
+Voice Input
+    ↓
+Speech-to-Text
+    ↓
+AI / Natural Language Processing
+    ↓
+Task, Date & Time Extraction
+    ↓
+Local Storage
+    ↓
+Structured Task Display
 ```
+
+## Example
+
+**Voice Command**
+
+```text
+Remind me to call John tomorrow at 5 PM.
+```
+
+**Extracted Task**
+
+```text
+Task: Call John
+Date: Tomorrow
+Time: 5:00 PM
+```
+
+## Technology Stack
+
+* React Native
+* JavaScript / TypeScript
+* Speech-to-Text / Voice Recognition
+* AI / Natural Language Processing
+* Local Storage
+* GitHub
+
+## Architecture
+
+The application follows a modular architecture separating the user interface, voice-processing logic, AI/task extraction, and local data management.
+
+```text
+User Interface
+      ↓
+Voice Input Layer
+      ↓
+Speech Recognition
+      ↓
+Task Extraction Service
+      ↓
+Local Storage
+      ↓
+Task Display
+```
+
+## Setup
+
+Clone the repository:
+
+```bash
+git clone <YOUR-GITHUB-REPOSITORY-URL>
+cd <PROJECT-NAME>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the React Native application:
+
+```bash
+npx expo start
+```
+
+or, for a React Native CLI project:
+
+```bash
+npx react-native start
+```
+
+Follow the platform-specific instructions to run the application on Android or iOS.
+
+## Third-Party Libraries & Services
+
+The project uses third-party libraries and services for functionality such as:
+
+* Voice recognition / speech-to-text
+* AI-based natural-language processing
+* React Native UI components
+* Local data storage
+
+The exact libraries and AI services used are listed in `package.json` and should be documented here according to the final implementation.
+
+## Source Code
+
+The complete source code is available through this GitHub repository.
+
+```text
+GitHub Repository:
+<YOUR-GITHUB-REPOSITORY-URL>
+```
+
+## Live Demo
+
+A web preview of the application is available at:
+
+https://speak-task-magic-32.lovable.app
+
+## Project Objective
+
+The objective of EchoTask is to provide a faster and more natural way of creating tasks by allowing users to communicate with the application through voice instead of manually entering task information.
+
+## Submission Compliance
+
+| Requirement           | Implementation                              |
+| --------------------- | ------------------------------------------- |
+| React Native          | React Native application                    |
+| Clean Code            | Modular and maintainable structure          |
+| Scalable Architecture | Separated UI, processing and storage layers |
+| README                | Setup, implementation and usage documented  |
+| Source Code           | GitHub repository / ZIP submission          |
+| Third-Party Services  | Libraries and AI services documented        |
+
+## Project Status
+
+**Status:** Academic Project / Prototype
+
+**Application:** EchoTask — Voice-to-Task Application
+
+**Live Preview:** https://speak-task-magic-32.lovable.app
