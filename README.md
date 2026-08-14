@@ -121,7 +121,7 @@ The complete source code is available through this GitHub repository.
 
 ```text
 GitHub Repository:
-<YOUR-GITHUB-REPOSITORY-URL>
+https://github.com/Nidhi-1235/Voice-to-Task-Application.git
 ```
 
 ## Live Demo
