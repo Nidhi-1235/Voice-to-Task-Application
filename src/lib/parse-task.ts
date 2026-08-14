@@ -99,7 +99,7 @@ function extractTime(input: string): { time: string; rest: string } {
   if (meridiem) {
     const hour = Number(meridiem[1]);
     const minutes = meridiem[2] ?? "00";
-    const suffix = meridiem[3].toLowerCase() === "a" ? "AM" : "PM";
+    const suffix = (meridiem[3] ?? "p").toLowerCase() === "a" ? "AM" : "PM";
     return {
       time: `${hour}:${minutes} ${suffix}`,
       rest: input.replace(meridiem[0], " "),
@@ -122,7 +122,7 @@ function extractTime(input: string): { time: string; rest: string } {
   const named = input.match(/\b(noon|midnight|morning|afternoon|evening)\b/i);
   if (named) {
     return {
-      time: titleCase(named[1].toLowerCase()),
+      time: titleCase((named[1] ?? "").toLowerCase()),
       rest: input.replace(named[0], " "),
     };
   }
