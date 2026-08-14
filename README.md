@@ -128,7 +128,7 @@ GitHub Repository:
 
 A web preview of the application is available at:
 
-https://speak-task-magic-32.lovable.app
+voice-to-task-application.vercel.app
 
 ## Project Objective
 
@@ -145,10 +145,3 @@ The objective of EchoTask is to provide a faster and more natural way of creatin
 | Source Code           | GitHub repository / ZIP submission          |
 | Third-Party Services  | Libraries and AI services documented        |
 
-## Project Status
-
-**Status:** Academic Project / Prototype
-
-**Application:** EchoTask — Voice-to-Task Application
-
-**Live Preview:** https://speak-task-magic-32.lovable.app
