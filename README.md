@@ -80,8 +80,8 @@ Task Display
 Clone the repository:
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
-cd <PROJECT-NAME>
+git clone https://github.com/Nidhi-1235/Voice-to-Task-Application.git
+cd Voice-to-Task-Application
 ```
 
 Install dependencies:
