@@ -42,12 +42,18 @@ function AuthPage() {
     setPending(true);
     try {
       if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: { emailRedirectTo: window.location.origin },
         });
         if (error) throw error;
+        // Without a session the account still needs email confirmation.
+        if (!data.session) {
+          toast.success("Check your inbox to confirm your email, then sign in.");
+          setMode("signin");
+          return;
+        }
         toast.success("Account created. You're all set!");
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
