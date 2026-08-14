@@ -128,7 +128,7 @@ https://github.com/Nidhi-1235/Voice-to-Task-Application.git
 
 A web preview of the application is available at:
 
-voice-to-task-application.vercel.app
+< https://speak-task-magic-32.lovable.app >
 
 ## Project Objective
 
