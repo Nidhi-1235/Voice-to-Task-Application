@@ -6,9 +6,11 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { CaptureBar } from "@/components/CaptureBar";
+import { NotificationBanner } from "@/components/NotificationBanner";
 import { TaskList } from "@/components/TaskList";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useAuth } from "@/hooks/useAuth";
+import { useTaskReminders } from "@/hooks/useTaskReminders";
 import { supabase } from "@/integrations/supabase/client";
 import { extractTask } from "@/lib/tasks.functions";
 import { parseTaskLocally } from "@/lib/parse-task";
