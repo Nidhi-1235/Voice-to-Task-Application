@@ -6,9 +6,11 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { CaptureBar } from "@/components/CaptureBar";
+import { NotificationBanner } from "@/components/NotificationBanner";
 import { TaskList } from "@/components/TaskList";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useAuth } from "@/hooks/useAuth";
+import { useTaskReminders } from "@/hooks/useTaskReminders";
 import { supabase } from "@/integrations/supabase/client";
 import { extractTask } from "@/lib/tasks.functions";
 import { parseTaskLocally } from "@/lib/parse-task";
@@ -104,6 +106,8 @@ function Dashboard({ userId }: { userId: string }) {
     queryFn: fetchTasks,
   });
 
+  const { permission, requestPermission } = useTaskReminders(tasks);
+
   const invalidate = () =>
     queryClient.invalidateQueries({ queryKey: ["tasks", userId] });
 
@@ -162,6 +166,7 @@ function Dashboard({ userId }: { userId: string }) {
     <>
       <h1 className="mb-5 text-2xl font-semibold tracking-tight">Capture a task</h1>
       <CaptureBar onSubmit={(text) => create.mutate(text)} pending={create.isPending} />
+      <NotificationBanner permission={permission} onEnable={requestPermission} />
       {isLoading ? (
         <p className="mt-10 text-center text-sm text-muted-foreground">
           Loading your tasks…
